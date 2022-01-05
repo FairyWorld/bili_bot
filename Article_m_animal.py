@@ -27,7 +27,7 @@ def start():
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4280.88 Safari/537.36",
                 "Referer": ""
                 })
-    picList = session.get("http://service.picasso.adesk.com/v1/vertical/category/4e4d610cdf714d2966000007/vertical?limit=10&order=new").json()["res"]["vertical"]
+    picList = session.get("http://service.picasso.adesk.com/v1/vertical/category/4e4d610cdf714d2966000001/vertical?limit=10&order=new").json()["res"]["vertical"]
     imageUrl = ''
     for i in range(num):
         url = picList[i]["img"]
