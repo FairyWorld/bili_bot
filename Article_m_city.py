@@ -15,7 +15,7 @@ def start():
     num = 8 #只爬取8张图,可以调大，如果中间网络异常会丢失几张图，最终数量可能达不到
 
     #创建B站专栏
-    article = Article(cookies, "城市手机壁纸") #创建B站专栏草稿,并设置标题
+    article = Article(cookies, "城市-手机壁纸") #创建B站专栏草稿,并设置标题
     content = article.Content() #创建content类编写文章正文
     content.startP().add('所有图片均转载于').startB().add('网络').endB().add('，如有侵权请联系我，我会立即').startB().add('删除').endB().endP().br()
         #开始一段正文    添加正文           开始加粗  加粗文字  结束加粗                                                           结束一段文字  换行
