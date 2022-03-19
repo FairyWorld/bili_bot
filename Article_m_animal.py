@@ -51,7 +51,7 @@ def start():
         article.setTags("电脑壁纸,手机壁纸,壁纸,动漫美图,美图,Pixiv,美女,二次元,动漫,动画") #设置tags标签
         article.save() #保存专栏至B站草稿箱
         print('保存草稿成功')
-        article.submit() #发布专栏，注释掉后需要到article.getAid(True)返回的网址去草稿箱手动提交
+#         article.submit() #发布专栏，注释掉后需要到article.getAid(True)返回的网址去草稿箱手动提交
         print('发表专栏成功')
     except:
         print('发表专栏失败')
