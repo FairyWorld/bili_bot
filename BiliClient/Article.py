@@ -334,6 +334,7 @@ class Article(biliContext):
         '''设置专栏tags标签, 字符串用,分开'''
         self._tags = tags
 
+    # 获取文集id列表: https://api.bilibili.com/x/article/creative/list/all
     def setListId(self, list_id: int):
         '''设置文集编号'''
         self._list_id = list_id
