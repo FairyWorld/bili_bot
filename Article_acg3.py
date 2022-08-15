@@ -15,7 +15,7 @@ def start():
     num = 10 #只爬取10张图(防止图片不合规需要修正才能过审), 可以调大, 如果中间网络异常会丢失几张图, 最终数量可能达不到(至少3张图片才可以发布)
 
     #创建B站专栏
-    article = Article(cookies, "东方project") #创建B站专栏草稿,并设置标题
+    article = Article(cookies, "动漫壁纸(3)") #创建B站专栏草稿,并设置标题
     content = article.Content() #创建content类编写文章正文
     content.startP().add('所有图片均转载于').startB().add('网络').endB().add('，如有侵权请联系我，我会立即').startB().add('删除').endB().endP().br()
         #开始一段正文    添加正文           开始加粗  加粗文字  结束加粗                                                           结束一段文字  换行
@@ -31,8 +31,8 @@ def start():
     for i in range(num):
         try:
             #关闭ssl校验
-            # https://api.ixiaowai.cn/mcapi/mcapi.php
-            res = session.get('https://img.paulzzh.tech/touhou/random', verify=False)
+            #该接口比较慢
+            res = session.get('https://api.yimian.xyz/img?type=moe', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except:
