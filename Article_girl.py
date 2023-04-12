@@ -15,7 +15,7 @@ def start():
     num = 10 #只爬取10张图(防止图片不合规需要修正才能过审), 可以调大, 如果中间网络异常会丢失几张图, 最终数量可能达不到(至少3张图片才可以发布)
 
     #创建B站专栏
-    article = Article(cookies, "动漫壁纸") #创建B站专栏草稿,并设置标题
+    article = Article(cookies, "美女壁纸大全") #创建B站专栏草稿,并设置标题
     content = article.Content() #创建content类编写文章正文
     content.startP().add('所有图片均转载于').startB().add('网络').endB().add('，如有侵权请联系我，我会立即').startB().add('删除').endB().endP().br()
         #开始一段正文    添加正文           开始加粗  加粗文字  结束加粗                                                           结束一段文字  换行
@@ -31,7 +31,7 @@ def start():
     for i in range(num):
         try:
             #关闭ssl校验
-            res = session.get('https://api.yimian.xyz/img', verify=False)
+            res = session.get('https://api.btstu.cn/sjbz/api.php', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except:
@@ -48,7 +48,7 @@ def start():
         article.setImage(imageUrl)  #将最后一张图片设置为专栏缩略图
         article.setCategory(4)  #将专栏分类到"动画 → 动漫杂谈"
         article.setOriginal(0)  #设置为非原创专栏,因为是转载的
-        article.setListId(684682) #设置文集, 获取id列表请看详情
+        article.setListId(601222) #设置文集, 获取id列表请看详情
         article.setTags("电脑壁纸,手机壁纸,壁纸,cosplay,美图,Pixiv,美女,二次元,动漫,动画") #设置tags标签
         article.save() #保存专栏至B站草稿箱
         print('保存草稿成功')
