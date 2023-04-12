@@ -32,7 +32,7 @@ def start():
         try:
             #关闭ssl校验
             #该接口比较慢
-            res = session.get('https://api.mtyqx.cn/api/random.php', verify=False)
+            res = session.get('https://api.aixiaowai.cn/api/api.php', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except:
