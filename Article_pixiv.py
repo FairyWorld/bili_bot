@@ -4,6 +4,8 @@ from BiliClient import Article
 
 import timeout_decorator
 
+requests.packages.urllib3.disable_warnings()
+
 @timeout_decorator.timeout(3600)
 def start():
     #获取secrets里的cookie
