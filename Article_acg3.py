@@ -32,7 +32,9 @@ def start():
         try:
             #关闭ssl校验
             #该接口比较慢
-            res = session.get('https://api.yimian.xyz/img?type=moe', verify=False)
+            # https://api.yimian.xyz/img?type=moe
+            # https://www.ouklc.com/api/tp, tp后面可以加上1-10
+            res = session.get('https://www.ouklc.com/api/tp', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except:
