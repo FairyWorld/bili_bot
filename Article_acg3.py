@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import requests, json, re, time, os
+import traceback
 from BiliClient import Article
 
 import timeout_decorator
@@ -39,7 +40,10 @@ def start():
             res = session.get('https://www.ouklc.com/api/tp', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
-        except:
+        except Exception as e:
+            print(f'插入第{i+1}张图片失败：{imageUrl}')
+            print(e)
+            print(traceback.print_exc())
             continue
         title = f'图片{i+1}'
         content.startP().startB().add(f'{i+1}.').endB().endP().picUrl(imageUrl, title) #将图片链接插入文章内容
@@ -59,7 +63,9 @@ def start():
         print('保存草稿成功')
         article.submit() #发布专栏，注释掉后需要到article.getAid(True)返回的网址去草稿箱手动提交
         print('发表专栏成功')
-    except:
+    except Exception as e:
         print('发表专栏失败')
+        print(e)
+        print(traceback.print_exc())
 
 start()
