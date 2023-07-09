@@ -35,7 +35,7 @@ def start():
         try:
             #关闭ssl校验
             # https://api.yimian.xyz/img
-            res = session.get('https://www.ouklc.com/api/tp4', verify=False)
+            res = session.get('https://www.jackxjz.com/api', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except Exception as e:

@@ -36,7 +36,7 @@ def start():
             #关闭ssl校验
             #该接口比较慢
             # https://service-5z0sdahv-1306777571.sh.apigw.tencentcs.com/release/
-            res = session.get('https://www.ouklc.com/api/tp2', verify=False)
+            res = session.get('https://api.paugram.com/wallpaper/', verify=False)
             imageUrl = article.imageFile2Url(res.content) #这里上传到B站，得到图片链接
             print(f'获取第{i+1}张图片成功：{imageUrl}')
         except Exception as e:
