@@ -55,7 +55,7 @@ def start():
         article.setImage(imageUrl)  #将最后一张图片设置为专栏缩略图
         article.setCategory(4)  #将专栏分类到"动画 → 动漫杂谈"
         article.setOriginal(0)  #设置为非原创专栏,因为是转载的
-        article.setListId(684682) #设置文集, 获取id列表请看详情
+        article.setListId(768789) #设置文集, 获取id列表请看详情
         article.setTags("电脑壁纸,手机壁纸,壁纸,cosplay,美图,Pixiv,美女,二次元,动漫,动画") #设置tags标签
         article.save() #保存专栏至B站草稿箱
         print('保存草稿成功')
